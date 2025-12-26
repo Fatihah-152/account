@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset = "UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+	<title>Nota</title>
+	<link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+	
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins%3Awght%40100%3B200%3B300%3B400%3B500%3B600&display=swap%27%29%3B');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
+
+	*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	text-decoration:none; 	/*hilangkan underline dkt each link*/
+	border:none;
+	outline:none;
+	font-family:"Poppins", sans-serif;   /*font utk semua tulisan*/
+	}
+	
+	html{
+	font-size:62.5%;		/*size tulisan*/
+	}
+	
+	body{
+	width:100%;
+	min-height: 100vh;
+	overflow-x:hidden;
+	background: 
+    linear-gradient(rgba(0, 0, 71, 0.6), rgba(0, 0, 71, 0.6)), url("https://i.pinimg.com/736x/76/4a/33/764a33f17c92b99ab92ee9743e9886d3.jpg")no-repeat center center/cover;
+	display: flex;
+	flex-direction: column;
+	background-size: cover;
+	color:white;		/*color tulisan*/
+	}
+	
+	header{
+	margin-top:20px;
+	position: fixed;   /*semua header akn sentiasa nmpk even scroll ke bawah*/
+	top:0;
+	left:0%;
+	width:100%;
+	padding:1rem 3rem;
+	background-color:transparent;
+	filter:drop-shadow(10px);
+	display:flex;
+	justify-content: space-between;
+	align-items:center;
+	z-index:100;
+	}
+	
+	.logo{			/*tulisan i-Autocount*/
+	font-size: 3rem;
+	color:#87CEEB;;		
+	font-weight: 500;
+	cursor: pointer;
+	transition: 0.5s ease;
+	}
+	
+	.logo:hover{
+	transform:scale(1.1);	/*bile hover brapa besar dia naik*/
+	}
+
+/*Container*/	
+	    .manual-topic {
+      background: black;				
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 5px #87CEEB;
+      #border: 3px solid #3A88E8;
+      margin-bottom: 10px;
+	  transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+	
+	.manual-topic:hover{
+		transform: translateY(-5px); 		/* naik sikit ke atas */
+		#box-shadow: 0 0 25px white;		/*bile hover dia mcm ada bayang/lampu*/
+		cursor: pointer;
+	}
+
+    .manual-topic h3 { 
+	margin: 0 0 10px;
+	text-align:left;		/*supaya tajuk kat belah kiri*/
+	font-size: 2rem;
+    font-weight: 200;
+	font-family: "Lilita One", sans-serif;
+	}
+	
+	.manual-list{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 🔥 2 kolum (kiri & kanan) */
+  gap: 2rem; /* jarak antara kotak */
+}
+
+	
+	@media(max-width:995px){
+  .logo-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+	.manual-list{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 	/* 🔥 2 kolum (kiri & kanan) */
+  gap: 1.5rem; 								/* jarak antara kotak */
+}
+}
+	
+	/*utk tulisan Hi, Its Alex dll*/
+	section{
+	min-height: 100vh;
+	padding: 5rem 9% 5rem;
+	}
+	
+	.home{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	gap:8rem;
+	}
+
+	/*utk tulisan h1 (Hi, Its Alex)*/
+	.home .home-content h1{
+	font-size:6rem;
+	font-weight:700;
+	line-height:1.3;
+	}
+	
+	span{		/*warna tulisan Alex*/
+	color: #87CEEB
+;
+	}
+	
+	/*utk tulisan h3 (Content)*/
+	.home-content h3{
+	margin-top: 3rem;
+	font-size:4rem;
+	margin-bottom:1rem;
+	font-weight:700;
+	}
+	
+	.home-content .manual-topic h3 { 
+	margin: 0 0 10px;
+	font-size: 3rem;
+    font-weight: 200;
+	font-family: "Lilita One", sans-serif;
+	color:white;
+	}
+	
+	.home-img{
+	border-radius:50%;
+	transform: translateX(-5rem);  /* nilai negatif = gerak ke kiri */
+	}
+	
+	.home-img img{
+	position: relative;
+	width:32vw;
+	border-radius:30%; 				/*supaya gambar jadi bntuk bujur*/
+	box-shadow:0 0 25px solid #87CEEB;
+	transition: 0.5s ease;
+	}
+	
+	.home-img img:hover{
+	font-size: 1.8rem;
+	font-weight:500;
+	box-shadow: 0 0 25px white;		/*bile hover dia mcm ada bayang/lampu*/
+	}
+	
+	/*Hire me button*/
+	.btn{
+	display: inline-block;
+	padding: 1rem 2.8rem;
+	background-color: #000047; 
+	border-radius: 4rem;
+	font-size:1.6rem;
+	color: white;
+	letter-spacing: 0.3rem;	/*spacing kiri kann antara huruf*/
+	font-weight: 600;
+	border: 2px solid #87CEEB;	/*lingkaran keliling hire me*/
+	transition: 0.3s ease;
+	cursor: pointer;
+	margin-top: 2rem;   /* besarkan jarak */
+	}
+	
+	.btn:hover{
+	transform: scale3d(1.03);
+	background-color: white;
+	color: #000047;
+	box-shadow: 0 0 25px white;		/*bile hover dia mcm ada bayang/lampu*/
+	}
+	
+	.psas-logo {
+  position: absolute;
+  top: 1.5rem;
+  right: 3rem;
+  width: 110px;   /* saiz logo */
+  height: auto;
+  cursor: pointer;
+  background-color:white;
+  border: 0.2rem solid white;	/*lingkaran keliling social icon*/
+  border-radius: 4rem;
+}
+	
+	
+	@media(max-width: 1000px){
+	  .home{
+		gap: 4rem;
+	  }
+	}
+	
+	@media(max-width:995px){
+	.home{
+	flex-direction:column;
+	margin:5rem 4rem;
+	}
+	
+	.home-img img{
+	width:70vw;
+	margin-top: 1rem;
+	}
+	
+	  .psas-logo{
+    width: 100px;
+    top: 1rem;
+    right: 2rem;
+  }
+	
+	}
+
+
+border
+
+</style>
+	
+<body>
+<header>
+  <div class="logo-nav">
+    <a href="okay.html" class="logo">i-Autocount</a>
+    
+	</div>
+	<img src="psas.png" alt="Politeknik PSAS" class="psas-logo">
+
+</header>
+
+	
+	<section class="home">
+
+	<!-- Checkbox hidden -->
+	<input type="checkbox" id="img-toggle" hidden>
+
+	<!-- Image (clickable) -->
+	<label for="img-toggle" class="home-img">
+		<img src="main.jpg" alt="">
+	</label>
+	
+	  <div class="home-content">
+		<h3> Content </h3>
+			<!-- Each concert card -->
+<div class="manual-list">
+  <a href="manual1.html" class="manual-topic"><h3>Manual 1</h3></a>
+  <a href="manual2.html" class="manual-topic"><h3>Manual 2</h3></a>
+  <a href="manual3.html" class="manual-topic"><h3>Manual 3</h3></a>
+  <a href="manual4.html" class="manual-topic"><h3>Manual 4</h3></a>
+  <a href="manual5.html" class="manual-topic"><h3>Manual 5</h3></a>
+  <a href="manual6.html" class="manual-topic"><h3>Manual 6</h3></a>
+</div>
+
+	  <a href="#" class="btn">Hire me</a>
+	  </div>
+	</section>
+</body>
+</html> 

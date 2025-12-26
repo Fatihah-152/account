@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset = "UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+	<title>Nota</title>
+	<link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins%3Awght%40100%3B200%3B300%3B400%3B500%3B600&display=swap%27%29%3B');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
+
+	*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	text-decoration:none; 	/*hilangkan underline dkt each link*/
+	border:none;
+	outline:none;
+	font-family:"Poppins", sans-serif;   /*font utk semua tulisan*/
+	}
+	
+	html{
+	font-size:62.5%;		/*size tulisan*/
+	}
+	
+	body{
+	width:100%;
+	min-height: 100vh;
+	overflow-x:hidden;
+	background: 
+    linear-gradient(rgba(0, 0, 71, 0.6), rgba(0, 0, 71, 0.6)), url("https://i.pinimg.com/736x/76/4a/33/764a33f17c92b99ab92ee9743e9886d3.jpg")no-repeat center center/cover;
+	display: flex;
+	flex-direction: column;
+	background-size: cover;
+	color:white;		/*color tulisan*/
+	}
+	
+	header{
+	margin-top:20px;
+	position: fixed;   /*semua header akn sentiasa nmpk even scroll ke bawah*/
+	top:0;
+	left:0%;
+	width:100%;
+	padding:1rem 3rem;
+	background-color:transparent;
+	filter:drop-shadow(10px);
+	display:flex;
+	justify-content: space-between;
+	align-items:center;
+	z-index:100;
+	}
+	
+	.logo{			/*tulisan i-Autocount*/
+	font-size: 3rem;
+	color:#87CEEB;;		
+	font-weight: 500;
+	cursor: pointer;
+	transition: 0.5s ease;
+	}
+	
+	.logo:hover{
+	transform:scale(1.1);	/*bile hover brapa besar dia naik*/
+	}
+	
+	.logo-nav {
+  display: flex;
+  align-items: center;
+  gap: 3rem; /* jarak antara logo & nav */
+}
+
+	.psas-logo {
+  position: absolute;
+  top: 1.5rem;
+  right: 3rem;
+  width: 100px;   				/* saiz logo */
+  height: auto;
+  background-color:white;
+  border: 0.2rem solid white;	/*lingkaran keliling social icon*/
+  border-radius: 4rem;
+}
+
+	/*utk tulisan Hi, Its Alex dll*/
+	section{
+	min-height: 100vh;
+	padding: 5rem 9% 5rem;
+	}
+	
+	.home{
+	display:flex;
+	padding-top: 8rem;
+	padding-left: 8rem;
+	align-items:left;
+	}
+
+	/*utk tulisan h1 (Chapter 1)*/
+	.home .home-content h1{
+	font-size:4rem;
+	font-weight:700;
+	line-height:1.3;
+	}
+	
+	/*utk tulisan h3 (Coursebook 1)*/
+	.home-content h3{
+	font-size:3rem;
+	margin-bottom:1rem;
+	font-weight:700;
+	color:#87CEEB;
+	}
+	
+	
+	.social-icons a{
+	display: inline-flex;
+	justify-content:center;
+	align-items:center;
+	width:4rem;
+	height: 4rem;
+	background-color:transparent;
+	border: 0.2rem solid #F98603;	/*lingkaran keliling social icon*/
+	font-size:2rem;
+	border-radius: 50%;
+	margin: 3rem 1.5rem 3rem 0;
+	transition: 0.3s ease;
+	color:white;	/*warna social icon*/
+	}
+	
+	.social-icons a:hover{
+	color: #191970;
+	transform: scale(1.3) translateY(-5px);		/*bile hover dkt social icon tu dia mcm naik*/
+	background-color: #FFFFFF;		/*bile hover dia tukar kaler apa*/
+	box-shadow:0 0 25px solid #161616;
+	}
+	
+	/*Hire me button*/
+	.btn{
+	display: inline-block;
+	padding: 1rem 2.8rem;
+	background-color: #191970; 
+	border-radius: 4rem;
+	font-size:1.6rem;
+	color: white;
+	letter-spacing: 0.3rem;	/*spacing kiri kann antara huruf*/
+	font-weight: 600;
+	border: 2px solid #F98603;	/*lingkaran keliling hire me*/
+	transition: 0.3s ease;
+	cursor: pointer;
+	}
+	
+	.btn:hover{
+	transform: scale3d(1.03);
+	background-color: white;
+	color: #191970;
+	box-shadow: 0 0 25px white;		/*bile hover dia mcm ada bayang/lampu*/
+	}
+	
+	.ebook-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  background-color: #3A88E8;   /* warna button */
+  color: #000047;               /* warna tulisan */
+  font-size: 2rem;
+  font-weight: 600;
+  border-radius: 1rem;
+  text-decoration: none;        /* hilangkan underline */
+  transition: 0.3s ease;
+  gap:8rem;
+}
+
+.ebook-link:hover {
+  background-color: #fff;
+  color: #000047;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #87CEEB;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* dua column */
+  gap: 4rem; /* jarak antara column dan row */
+  margin-top: 2rem;
+}
+
+.item {
+  display: row;
+  flex-direction: column;
+  gap: 0.5rem; /* jarak antara h3 & button */
+  padding-right:20rem;
+}
+
+.item.left {
+  align-items: flex-start; /* kiri */
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem; /* jarak antara button */
+}
+
+	@media(max-width:995px){
+  .logo-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+    .grid-container{
+    grid-template-columns: 1fr; /* jadi 1 kolum */
+  }
+  
+  	.home{
+	flex-direction:column;
+	margin:5rem 4rem;
+	}
+	
+	.home{
+	flex-direction:column;
+	margin:5rem 4rem;
+	padding-top: 8rem;
+	padding-left: 4rem;
+	align-items:left;
+	}
+	
+	/*utk tulisan h1 (Chapter 1)*/
+	.home .home-content h1{
+	font-size:3rem;
+	font-weight:700;
+	line-height:1.3;
+	margin-top:-3rem;
+	}
+	
+	/*utk tulisan h3 (Coursebook 1)*/
+	.home-content h3{
+	font-size:2rem;
+	margin-bottom:1rem;
+	font-weight:700;
+	color:#87CEEB;
+	}
+	
+  .item{
+    padding-right: 0; /* buang jarak kanan */
+  }
+	
+		.ebook-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  background-color: #3A88E8;   /* warna button */
+  color: #000047;               /* warna tulisan */
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-radius: 1rem;
+  text-decoration: none;        /* hilangkan underline */
+  transition: 0.3s ease;
+  gap:8rem;
+}
+	
+	  .psas-logo{
+    width: 100px;
+    top: 1rem;
+    right: 2rem;
+  }
+  }
+
+
+
+</style>
+
+	
+	
+<body>
+<header>
+  <div class="logo-nav">
+    <a href="okay.html" class="logo">i-Autocount</a>
+    
+	</div>
+	<img src="psas.png" alt="Politeknik PSAS" class="psas-logo">
+</header>
+
+	<section class="home">
+		  <div class="home-content">
+		<h1>Chapter 1</h1>
+<div class="grid-container">
+  <div class="item left">
+    <h3>Coursebook</h3>
+	<div class="buttons">
+    <a href="https://drive.google.com/file/d/1FSsb7EITW7tkW9-u48LUhiaO_pqRT8ei/view?usp=sharing" class="ebook-link">E-book</a>
+    <a href="https://www.youtube.com/watch?v=Jj1_HvdWod4&list=PLRIAv-nMa6IdVDT6tu-p3awLk1hjhBO-x&index=1" class="ebook-link">Video</a>
+	</div>
+  </div>
+
+  <div class="item left">
+    <h3>Exercise 1.1</h3>
+	<div class="buttons">
+    <a href="https://drive.google.com/file/d/1ct1PoZIcQwX_gcYCTY9B7g8JMrQSaQZo/view?usp=sharing" class="ebook-link">E-book</a>
+    <a href="https://www.youtube.com/watch?v=IfJtaCXJAl4&list=PLRIAv-nMa6IdVDT6tu-p3awLk1hjhBO-x&index=2" class="ebook-link">Video</a>
+	</div>
+  </div>
+
+  <div class="item left">
+    <h3>Exercise 1.2</h3>
+	<div class="buttons">
+    <a href="https://drive.google.com/file/d/1fxXjKh3MQJF6tpLuZ5TXBn3DDxKRIfic/view?usp=sharing" class="ebook-link">E-book</a>
+    <a href="https://www.youtube.com/watch?v=5tmL6x-nkBM&list=PLRIAv-nMa6IdVDT6tu-p3awLk1hjhBO-x&index=3" class="ebook-link">Video</a>
+	</div>
+  </div>
+
+  <div class="item left">
+    <h3>Exercise 1.3</h3>
+	<div class="buttons">
+    <a href="https://drive.google.com/file/d/1Kl3g1PCnP0b0piGjJn1OVCTw3mKIQY3Y/view?usp=sharing" class="ebook-link">E-book</a>
+    <a href="https://www.youtube.com/watch?v=uZR6Uftgy_s&list=PLRIAv-nMa6IdVDT6tu-p3awLk1hjhBO-x&index=4" class="ebook-link">Video</a>
+	</div>
+  </div>
+</div>
+		
+		<div class="social-icons">
+			<a href="#"><i class="fa-brands fa-linkedin"></i>
+			<a href="#"><i class="fa-brands fa-github"></i>
+			<a href="#"><i class="fa-brands fa-x-twitter"></i>
+			<a href="#"><i class="fa-brands fa-instagram"></i>
+	  </div>
+	  <a href="#" class="btn">Hire me</a>
+	  </div>
+	  
+	</section>
+</body>
+</html> 
